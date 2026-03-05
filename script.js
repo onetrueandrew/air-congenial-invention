@@ -31,19 +31,17 @@ function animate() {
 animate();
 
 //copy
+//copy
 const codeEl = document.getElementById("copyCode");
-
 if (codeEl) {
     codeEl.addEventListener("click", async () => {
+        rybbit.track('Copy Code Clicked');
         const code = codeEl.innerText.trim();
-
         try {
             await navigator.clipboard.writeText(code);
             codeEl.classList.add("copied");
-
             const original = codeEl.innerText;
             codeEl.innerText = "COPIED ✓";
-
             setTimeout(() => {
                 codeEl.innerText = original;
                 codeEl.classList.remove("copied");
