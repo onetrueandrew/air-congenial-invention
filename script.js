@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const codeEl = document.getElementById("copyCode");
     if (codeEl) {
         codeEl.addEventListener("click", async () => {
-            rybbit.track('Copy Code Clicked');
+            window.rybbit.event('Copy Code Clicked');
             const code = codeEl.innerText.trim();
             try {
                 await navigator.clipboard.writeText(code);
