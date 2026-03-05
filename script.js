@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const codeEl = document.getElementById("copyCode");
     if (codeEl) {
         codeEl.addEventListener("click", async () => {
-            window.rybbit.event('Copy Code Clicked');
+            //window.rybbit.event('Copy Code Clicked');
+            window.rybbit.event('Copy Code Clicked', { source: 'referral_box' });
             const code = codeEl.innerText.trim();
             try {
                 await navigator.clipboard.writeText(code);
